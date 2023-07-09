@@ -1,6 +1,37 @@
 # CPP-Module-01
 This module is designed to help you understand the memory allocation, reference, pointers to members and the usage of the switch in CPP.
 
+# Exercise 02
+
+
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    string str = "HI THIS IS BRAIN";
+    string* stringPTR = &str;
+    string& stringREF = str;
+
+    cout << "Memory address of the string variable: " << &str << endl;
+    cout << "Memory address held by stringPTR: " << stringPTR << endl;
+    cout << "Memory address held by stringREF: " << &stringREF << endl;
+
+    cout << "Value of the string variable: " << str << endl;
+    cout << "Value pointed to by stringPTR: " << *stringPTR << endl;
+    cout << "Value pointed to by stringREF: " << stringREF << endl;
+
+    return 0;
+}
+```
+
+- We define a string variable `str` and initialize it with the value "HI THIS IS BRAIN".
+- `stringPTR` is a pointer to the string, and we initialize it with the memory address of `str` using the `&` operator.
+- `stringREF` is a reference to the string, and we initialize it to `str` directly.
+- The memory addresses of `str`, `stringPTR`, and `stringREF` are printed using the address-of operator `&`.
+- The values of `str`, `*stringPTR` (value pointed by `stringPTR`), and `stringREF` are printed.
+
 
 # Exercise 03
 
