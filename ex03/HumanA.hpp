@@ -6,7 +6,7 @@
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 15:30:08 by simao             #+#    #+#             */
-/*   Updated: 2023/07/09 16:12:00 by simao            ###   ########.fr       */
+/*   Updated: 2023/07/09 22:56:38 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ class HumanA
         std::string name;
         Weapon  *weapon;
     public:
-                HumanA(std::string name, Weapon *weapon);
-                ~HumanA();
+                HumanA(std::string name, Weapon &weapon);
         void    attack();
 };
 
