@@ -165,7 +165,7 @@ These examples demonstrate the basic usage of `std::fstream` for file input and 
 
 In C++, there are several ways to use pointers to member functions. Here are the main ways to work with pointers to member functions:
 
-1. Function Pointers to Static Member Functions:
+1. <ins>Function Pointers to Static Member Functions</ins>:
 
    C++ allows you to declare function pointers that point to static member functions. Static member functions are associated with the class itself rather than specific instances of the class. The syntax for declaring a function pointer to a static member function is as follows:
    
@@ -191,7 +191,7 @@ In C++, there are several ways to use pointers to member functions. Here are the
    }
    ```
 
-2. Pointers to Non-Static Member Functions:
+2. <ins>Pointers to Non-Static Member Functions</ins>:
    
    Pointers to non-static member functions in C++ are a bit more complex than function pointers to static member functions. Since non-static member functions are associated with specific instances of a class, you need an instance (object) of the class to call the member function via the pointer. The syntax for declaring a pointer to a non-static member function is as follows:
 
@@ -219,7 +219,7 @@ In C++, there are several ways to use pointers to member functions. Here are the
    }
    ```
 
-5. std::function with Member Functions:
+3. <ins>std::function with Member Functions</ins>:
 
    The C++ Standard Library provides `std::function`, which is a general-purpose polymorphic function wrapper. It can be used to store and invoke member functions. `std::function` provides more flexibility and type safety compared to function pointers. Here's an example:
 
