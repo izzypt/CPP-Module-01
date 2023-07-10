@@ -6,7 +6,7 @@
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 13:00:02 by simao             #+#    #+#             */
-/*   Updated: 2023/07/10 16:04:31 by simao            ###   ########.fr       */
+/*   Updated: 2023/07/10 16:09:58 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,14 @@ std::string	formatFileName(char *filename)
 
 int	main(int argc, char **argv)
 {
-	std::string		str1;
-	std::string		str2;
+	std::string		str1 = argv[2];
+	std::string		str2 = argv[3];
 	int				str_pos;
 	std::fstream	file;
 	std::fstream	new_file;
 
 	if (checkError(argc))
 		return (1);
-	str1 = argv[2];
-	str2 = argv[3];
 	file.open(argv[1], std::ios::in);
 	new_file.open(formatFileName(argv[1]), std::ios::out);
 	if (file.is_open())
