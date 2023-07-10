@@ -160,3 +160,90 @@ int main() {
 ```
 
 These examples demonstrate the basic usage of `std::fstream` for file input and output operations in C++. Remember to handle any potential errors when opening or operating on files and to close the file when you're done working with it using the `close()` member function.
+
+# Exercise 05 Notes
+
+In C++, there are several ways to use pointers to member functions. Here are the main ways to work with pointers to member functions:
+
+1. Function Pointers to Static Member Functions:
+
+   C++ allows you to declare function pointers that point to static member functions. Static member functions are associated with the class itself rather than specific instances of the class. The syntax for declaring a function pointer to a static member function is as follows:
+   
+   ```cpp
+   returnType (*functionPointer)(arguments);
+   ```
+   
+   Here's an example:
+   
+   ```cpp
+   class MyClass {
+   public:
+       static void staticMemberFunction(int arg) {
+           // Code here
+       }
+   };
+
+   int main() {
+       void (*functionPtr)(int) = &MyClass::staticMemberFunction;
+       // Use functionPtr to call staticMemberFunction
+
+       return 0;
+   }
+   ```
+
+2. Pointers to Non-Static Member Functions:
+   
+   Pointers to non-static member functions in C++ are a bit more complex than function pointers to static member functions. Since non-static member functions are associated with specific instances of a class, you need an instance (object) of the class to call the member function via the pointer. The syntax for declaring a pointer to a non-static member function is as follows:
+
+   ```cpp
+   returnType (className::*functionPointer)(arguments);
+   ```
+
+   Here's an example:
+
+   ```cpp
+   class MyClass {
+   public:
+       void memberFunction(int arg) {
+           // Code here
+       }
+   };
+
+   int main() {
+       void (MyClass::*functionPtr)(int) = &MyClass::memberFunction;
+       MyClass obj;
+       // Call memberFunction using the object and functionPtr
+       (obj.*functionPtr)(42);
+
+       return 0;
+   }
+   ```
+
+5. std::function with Member Functions:
+
+   The C++ Standard Library provides `std::function`, which is a general-purpose polymorphic function wrapper. It can be used to store and invoke member functions. `std::function` provides more flexibility and type safety compared to function pointers. Here's an example:
+
+   ```cpp
+   #include <iostream>
+   #include <functional>
+
+   class MyClass {
+   public:
+       void memberFunction(int arg) {
+           // Code here
+           std::cout << "Member function called with argument: " << arg << std::endl;
+       }
+   };
+
+   int main() {
+       MyClass obj;
+       std::function<void(MyClass*, int)> functionWrapper = &MyClass::memberFunction;
+       functionWrapper(&obj, 42);  // Call memberFunction via the functionWrapper
+
+       return 0;
+   }
+   ```
+
+   In this example, `std::function` is used to store a member function pointer along with the object pointer (`MyClass*`). The stored function can then be invoked later by calling `functionWrapper(&obj, 42)`.
+
+These are the main ways to work with pointers to member functions in C++. Depending on your requirements and use case, you can choose the appropriate method that suits your needs.
