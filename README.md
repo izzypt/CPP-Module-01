@@ -65,3 +65,98 @@ When to use references:
 - When implementing operator overloading to provide a more intuitive syntax.
 
 It's worth noting that references can also be used in certain cases where pointers are used, but references offer a safer and more convenient alternative when there is no need for the flexibility provided by pointers.
+
+# Exercise 04 Notes:
+
+A brief introduction to the basics of `std::fstream` in C++, including how to include the necessary headers, open a file, read from a file, and write to a file.
+
+1. Including the necessary headers:
+To use `std::fstream`, you need to include the `<fstream>` header file:
+
+```cpp
+#include <fstream>
+```
+
+2. Opening a file:
+To open a file for reading, writing, or both, you can create an instance of `std::ifstream`, `std::ofstream`, or `std::fstream`, respectively. Then, you can use the `open()` member function to open the file:
+
+```cpp
+#include <fstream>
+
+int main() {
+    std::ifstream inputFile;
+    inputFile.open("input.txt"); // Open the file for reading
+
+    std::ofstream outputFile;
+    outputFile.open("output.txt"); // Open the file for writing
+
+    std::fstream file;
+    file.open("data.txt", std::ios::in | std::ios::out); // Open the file for reading and writing
+
+    // ...
+
+    return 0;
+}
+```
+
+3. Reading from a file:
+To read from a file, you can use the `>>` operator or the `getline()` function to extract data from the file stream:
+
+```cpp
+#include <fstream>
+#include <iostream>
+#include <string>
+
+int main() {
+    std::ifstream file("data.txt"); // Open the file for reading
+
+    if (file.is_open()) {
+        int number;
+        file >> number; // Read an integer from the file
+
+        std::string line;
+        std::getline(file, line); // Read a line from the file
+
+        // Process the read data
+        std::cout << "Number: " << number << std::endl;
+        std::cout << "Line: " << line << std::endl;
+
+        file.close();
+    }
+    else {
+        // Failed to open the file
+        // Handle the error accordingly
+    }
+
+    return 0;
+}
+```
+
+4. Writing to a file:
+To write to a file, you can use the `<<` operator or the `write()` function to insert data into the file stream:
+
+```cpp
+#include <fstream>
+
+int main() {
+    std::ofstream file("output.txt"); // Open the file for writing
+
+    if (file.is_open()) {
+        int number = 42;
+        file << number << std::endl; // Write an integer to the file
+
+        std::string line = "Hello, World!";
+        file.write(line.c_str(), line.size()); // Write a string to the file
+
+        file.close();
+    }
+    else {
+        // Failed to open the file
+        // Handle the error accordingly
+    }
+
+    return 0;
+}
+```
+
+These examples demonstrate the basic usage of `std::fstream` for file input and output operations in C++. Remember to handle any potential errors when opening or operating on files and to close the file when you're done working with it using the `close()` member function.
