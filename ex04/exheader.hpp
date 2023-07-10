@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   header.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/09 16:12:15 by simao             #+#    #+#             */
-/*   Updated: 2023/07/09 23:15:48 by simao            ###   ########.fr       */
+/*   Created: 2023/07/10 13:29:36 by simao             #+#    #+#             */
+/*   Updated: 2023/07/10 13:31:03 by simao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#ifndef EXHEADER_H
+#define EXHEADER_H
 
-HumanA::HumanA(std::string name, Weapon &weapon)
-{
-    this->name = name;
-    this->weapon = &weapon;
-}
+/* Libraries */
 
-void    HumanA::attack()
-{
-    std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
-}
+#include <string>
+#include <iostream>
+#include <fstream>
+
+/* Colors */
+
+# define RED			"\e[0;31m"
+# define L_RED			"\e[0;38;5;9m"
+# define GREEN			"\e[0;32m"
+# define D_GREEN		"\e[0;38;5;22m"
+# define RESET			"\e[0m"
+
+
+#endif

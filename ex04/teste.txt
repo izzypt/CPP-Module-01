@@ -1,0 +1,5 @@
+HEllo all
+THis is a line of code that
+I'am trying to text so far..
+SO, let's see, shall we ?
+How does this fstream, ofstream and ifstream really works...
