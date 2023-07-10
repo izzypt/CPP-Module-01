@@ -1,9 +1,7 @@
 # CPP-Module-01
 This module is designed to help you understand the memory allocation, reference, pointers to members and the usage of the switch in CPP.
 
-# Exercise 02
-
-
+# Exercise 02 Notes :
 
 ```cpp
 #include <iostream>
@@ -33,7 +31,7 @@ int main() {
 - The values of `str`, `*stringPTR` (value pointed by `stringPTR`), and `stringREF` are printed.
 
 
-# Exercise 03
+# Exercise 03 Notes:
 
 ### Pointers and References
 
