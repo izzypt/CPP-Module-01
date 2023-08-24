@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
+/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 22:40:11 by simao             #+#    #+#             */
-/*   Updated: 2023/07/09 23:01:26 by simao            ###   ########.fr       */
+/*   Updated: 2023/08/23 21:17:30 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
+    (void)argc;
+    (void)argv;
     Weapon club = Weapon("crude spiked club");
     HumanA bob("Bob", club);
     bob.attack();

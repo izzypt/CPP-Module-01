@@ -1,6 +1,6 @@
-NAME = ZOMBIES
+NAME = sed
 
-SRCS = Zombie.cpp newZombie.cpp randomChump.cpp main.cpp
+SRCS = main.cpp
 
 CC = c++
 

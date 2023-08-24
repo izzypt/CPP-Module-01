@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
+/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 16:33:46 by simao             #+#    #+#             */
-/*   Updated: 2023/07/07 18:34:01 by simao            ###   ########.fr       */
+/*   Updated: 2023/08/22 19:27:40 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ Zombie *newZombie(std::string name)
 {
     Zombie *newZombie;
 
-    newZombie = new Zombie(name);
+    newZombie = new Zombie();
+    newZombie->setName(name);
     return (newZombie);
 }

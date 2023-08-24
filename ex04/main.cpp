@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: simao <simao@student.42.fr>                +#+  +:+       +#+        */
+/*   By: smagalha <smagalha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 13:00:02 by simao             #+#    #+#             */
-/*   Updated: 2023/07/10 16:09:58 by simao            ###   ########.fr       */
+/*   Updated: 2023/08/23 21:44:51 by smagalha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	main(int argc, char **argv)
 {
 	std::string		str1 = argv[2];
 	std::string		str2 = argv[3];
+	std::string		fileName;
 	int				str_pos;
 	std::fstream	file;
 	std::fstream	new_file;
@@ -45,7 +46,8 @@ int	main(int argc, char **argv)
 	if (checkError(argc))
 		return (1);
 	file.open(argv[1], std::ios::in);
-	new_file.open(formatFileName(argv[1]), std::ios::out);
+	fileName = formatFileName(argv[1]);
+	new_file.open(fileName.c_str(), std::ios::out);
 	if (file.is_open())
 	{
 		std::string line;

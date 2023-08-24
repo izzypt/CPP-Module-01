@@ -1,6 +1,6 @@
-NAME = ZOMBIES
+NAME = unnecessary_violence
 
-SRCS = Zombie.cpp newZombie.cpp randomChump.cpp main.cpp
+SRCS = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 
 CC = c++
 
